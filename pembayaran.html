@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pembayaran - Kedai Nyonya Rumah</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#f4f4f4;
+    }
+
+    /* HEADER */
+
+    header{
+      background:darkgreen;
+      color:white;
+      padding:15px 30px;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    header h1{
+      font-size:28px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:20px;
+      font-weight:bold;
+    }
+
+    nav a:hover{
+      color:yellow;
+    }
+
+    /* BOX PEMBAYARAN */
+
+    .container{
+
+      width:400px;
+
+      background:white;
+
+      margin:50px auto;
+
+      padding:30px;
+
+      border-radius:10px;
+
+      box-shadow:0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .container h2{
+      text-align:center;
+      margin-bottom:20px;
+      color:darkgreen;
+    }
+
+    label{
+      font-weight:bold;
+    }
+
+    input, select{
+
+      width:100%;
+
+      padding:12px;
+
+      margin-top:5px;
+      margin-bottom:15px;
+
+      border:1px solid gray;
+
+      border-radius:5px;
+    }
+
+    button{
+
+      width:100%;
+
+      padding:12px;
+
+      border:none;
+
+      background:green;
+
+      color:white;
+
+      font-size:16px;
+
+      font-weight:bold;
+
+      border-radius:5px;
+
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:darkgreen;
+    }
+
+    .hasil{
+
+      margin-top:20px;
+
+      padding:15px;
+
+      background:#e8ffe8;
+
+      border-radius:5px;
+
+      display:none;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <h1>Kedai Nyonya Rumah</h1>
+
+    <nav>
+
+      <a href="index.html">Beranda</a>
+
+      <a href="pembayaran.html">Pembayaran</a>
+
+      <a href="login.html">Logout</a>
+
+    </nav>
+
+  </header>
+
+  <!-- FORM PEMBAYARAN -->
+
+  <div class="container">
+
+    <h2>Pembayaran</h2>
+
+    <!-- NAMA -->
+    <label>Nama Pemesan</label>
+
+    <input type="text" id="nama" placeholder="Masukkan nama">
+
+    <!-- MENU -->
+    <label>Pilih Menu</label>
+
+    <select id="menu">
+
+      <option value="40000">Nasi Goreng - Rp 40.000</option>
+
+      <option value="65000">Nasi Campur Bali - Rp 65.000</option>
+
+      <option value="45000">Nasi Tongseng - Rp 45.000</option>
+
+    </select>
+
+    <!-- JUMLAH -->
+    <label>Jumlah Pesanan</label>
+
+    <input type="number" id="jumlah" placeholder="Masukkan jumlah">
+
+    <!-- METODE -->
+    <label>Metode Pembayaran</label>
+
+    <select id="metode">
+
+      <option>Transfer Bank</option>
+
+      <option>DANA</option>
+
+      <option>OVO</option>
+
+      <option>GoPay</option>
+
+      <option>COD</option>
+
+    </select>
+
+    <!-- BUTTON -->
+    <button onclick="bayar()">
+
+      Bayar Sekarang
+
+    </button>
+
+    <!-- HASIL -->
+    <div class="hasil" id="hasil">
+
+      <h3>Pembayaran Berhasil ✅</h3>
+
+      <br>
+
+      <p id="detail"></p>
+
+    </div>
+
+  </div>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    function bayar(){
+
+      let nama = document.getElementById("nama").value;
+
+      let harga = document.getElementById("menu").value;
+
+      let jumlah = document.getElementById("jumlah").value;
+
+      let metode = document.getElementById("metode").value;
+
+      if(nama == "" || jumlah == ""){
+
+        alert("Data belum lengkap!");
+
+      }
+
+      else{
+
+        let total = harga * jumlah;
+
+        document.getElementById("hasil").style.display = "block";
+
+        document.getElementById("detail").innerHTML =
+
+        "Nama : " + nama + "<br>" +
+
+        "Total Bayar : Rp " + total + "<br>" +
+
+        "Metode : " + metode;
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>

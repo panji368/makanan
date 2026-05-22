@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dashboard - Kedai Nyonya Rumah</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#f4f4f4;
+    }
+
+    /* ================= HEADER ================= */
+
+    header{
+
+      background:darkgreen;
+
+      color:white;
+
+      padding:15px 30px;
+
+      display:flex;
+
+      justify-content:space-between;
+
+      align-items:center;
+    }
+
+    header h1{
+      font-size:30px;
+    }
+
+    nav a{
+
+      color:white;
+
+      text-decoration:none;
+
+      margin-left:20px;
+
+      font-weight:bold;
+    }
+
+    nav a:hover{
+      color:yellow;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+
+      width:100%;
+
+      height:300px;
+
+      position:relative;
+
+      overflow:hidden;
+    }
+
+    .hero img{
+
+      width:100%;
+
+      height:100%;
+
+      object-fit:cover;
+    }
+
+    .hero-text{
+
+      position:absolute;
+
+      top:50%;
+      left:50%;
+
+      transform:translate(-50%, -50%);
+
+      background:rgba(0,0,0,0.5);
+
+      color:white;
+
+      padding:20px;
+
+      border-radius:10px;
+
+      text-align:center;
+    }
+
+    .hero-text h2{
+      font-size:40px;
+      margin-bottom:10px;
+    }
+
+    /* ================= DASHBOARD ================= */
+
+    .dashboard{
+
+      padding:40px;
+
+      display:grid;
+
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+
+      gap:20px;
+    }
+
+    .card{
+
+      background:white;
+
+      padding:25px;
+
+      border-radius:10px;
+
+      box-shadow:0 0 10px rgba(0,0,0,0.2);
+
+      text-align:center;
+    }
+
+    .card h2{
+
+      color:darkgreen;
+
+      margin-bottom:10px;
+    }
+
+    .card p{
+
+      font-size:28px;
+
+      font-weight:bold;
+
+      color:#333;
+    }
+
+    /* ================= TABEL ================= */
+
+    .table-box{
+
+      margin:40px;
+
+      background:white;
+
+      padding:20px;
+
+      border-radius:10px;
+
+      box-shadow:0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .table-box h2{
+
+      margin-bottom:20px;
+
+      color:darkgreen;
+    }
+
+    table{
+
+      width:100%;
+
+      border-collapse:collapse;
+    }
+
+    table th{
+
+      background:darkgreen;
+
+      color:white;
+
+      padding:12px;
+    }
+
+    table td{
+
+      padding:12px;
+
+      border-bottom:1px solid #ddd;
+
+      text-align:center;
+    }
+
+    /* ================= BUTTON ================= */
+
+    .btn{
+
+      padding:8px 12px;
+
+      border:none;
+
+      border-radius:5px;
+
+      cursor:pointer;
+
+      color:white;
+
+      font-weight:bold;
+    }
+
+    .edit{
+      background:orange;
+    }
+
+    .hapus{
+      background:red;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+
+      background:darkgreen;
+
+      color:white;
+
+      text-align:center;
+
+      padding:15px;
+
+      margin-top:30px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+
+    <h1>Dashboard Admin</h1>
+
+    <nav>
+
+      <a href="dashboard.html">Dashboard</a>
+
+      <a href="pesanan.html">Pesanan</a>
+
+      <a href="pembayaran.html">Pembayaran</a>
+
+      <a href="login.html">Logout</a>
+
+    </nav>
+
+  </header>
+
+  <!-- ================= HERO ================= -->
+
+  <div class="hero">
+
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600">
+
+    <div class="hero-text">
+
+      <h2>Kedai Nyonya Rumah</h2>
+
+      <p>Dashboard Management Restoran</p>
+
+    </div>
+
+  </div>
+
+  <!-- ================= CARD DASHBOARD ================= -->
+
+  <div class="dashboard">
+
+    <!-- TOTAL MENU -->
+    <div class="card">
+
+      <h2>Total Menu</h2>
+
+      <p>15</p>
+
+    </div>
+
+    <!-- TOTAL PESANAN -->
+    <div class="card">
+
+      <h2>Total Pesanan</h2>
+
+      <p>120</p>
+
+    </div>
+
+    <!-- TOTAL USER -->
+    <div class="card">
+
+      <h2>Total User</h2>
+
+      <p>80</p>
+
+    </div>
+
+    <!-- TOTAL PEMBAYARAN -->
+    <div class="card">
+
+      <h2>Total Pembayaran</h2>
+
+      <p>Rp 15JT</p>
+
+    </div>
+
+  </div>
+
+  <!-- ================= TABEL PESANAN ================= -->
+
+  <div class="table-box">
+
+    <h2>Data Pesanan</h2>
+
+    <table>
+
+      <tr>
+
+        <th>No</th>
+
+        <th>Nama</th>
+
+        <th>Menu</th>
+
+        <th>Jumlah</th>
+
+        <th>Status</th>
+
+        <th>Aksi</th>
+
+      </tr>
+
+      <tr>
+
+        <td>1</td>
+
+        <td>Panji</td>
+
+        <td>Nasi Goreng</td>
+
+        <td>2</td>
+
+        <td>Selesai</td>
+
+        <td>
+
+          <button class="btn edit">
+            Edit
+          </button>
+
+          <button class="btn hapus">
+            Hapus
+          </button>
+
+        </td>
+
+      </tr>
+
+      <tr>
+
+        <td>2</td>
+
+        <td>Budi</td>
+
+        <td>Nasi Campur Bali</td>
+
+        <td>1</td>
+
+        <td>Diproses</td>
+
+        <td>
+
+          <button class="btn edit">
+            Edit
+          </button>
+
+          <button class="btn hapus">
+            Hapus
+          </button>
+
+        </td>
+
+      </tr>
+
+      <tr>
+
+        <td>3</td>
+
+        <td>Siti</td>
+
+        <td>Nasi Tongseng</td>
+
+        <td>3</td>
+
+        <td>Selesai</td>
+
+        <td>
+
+          <button class="btn edit">
+            Edit
+          </button>
+
+          <button class="btn hapus">
+            Hapus
+          </button>
+
+        </td>
+
+      </tr>
+
+    </table>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    @KedaiNyonyaRumah
+
+  </footer>
+
+</body>
+</html>

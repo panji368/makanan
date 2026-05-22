@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login Kedai Nyonya Rumah</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      height:100vh;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      background:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600');
+      background-size:cover;
+      background-position:center;
+    }
+
+    .login-box{
+
+      width:350px;
+
+      background:rgba(255,255,255,0.9);
+
+      padding:30px;
+
+      border-radius:15px;
+
+      box-shadow:0 0 10px rgba(0,0,0,0.3);
+
+      text-align:center;
+    }
+
+    .login-box h1{
+
+      margin-bottom:20px;
+
+      color:darkgreen;
+    }
+
+    input{
+
+      width:100%;
+
+      padding:12px;
+
+      margin:10px 0;
+
+      border:1px solid gray;
+
+      border-radius:5px;
+    }
+
+    button{
+
+      width:100%;
+
+      padding:12px;
+
+      border:none;
+
+      background:darkgreen;
+
+      color:white;
+
+      font-size:16px;
+
+      font-weight:bold;
+
+      border-radius:5px;
+
+      cursor:pointer;
+
+      transition:0.3s;
+    }
+
+    button:hover{
+
+      background:green;
+
+    }
+
+    p{
+
+      margin-top:15px;
+
+      font-size:14px;
+    }
+
+    a{
+
+      color:darkgreen;
+
+      text-decoration:none;
+
+      font-weight:bold;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+
+    <h1>Login</h1>
+
+    <input type="text" id="username" placeholder="Masukkan Username">
+
+    <input type="password" id="password" placeholder="Masukkan Password">
+
+    <button onclick="login()">
+      Login
+    </button>
+
+    <p>
+      Belum punya akun?
+      <a href="#">Daftar</a>
+    </p>
+
+  </div>
+
+  <script>
+
+    function login(){
+
+      let username = document.getElementById("username").value;
+
+      let password = document.getElementById("password").value;
+
+      if(username == "" || password == ""){
+
+        alert("Username dan Password wajib diisi!");
+
+      }
+
+      else{
+
+        alert("Login Berhasil!");
+
+        window.location.href = "index.html";
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>

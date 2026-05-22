@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Register - Kedai Nyonya Rumah</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+
+      height:100vh;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      background:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600');
+
+      background-size:cover;
+      background-position:center;
+    }
+
+    .register-box{
+
+      width:400px;
+
+      background:rgba(255,255,255,0.9);
+
+      padding:30px;
+
+      border-radius:15px;
+
+      box-shadow:0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .register-box h1{
+
+      text-align:center;
+
+      color:darkgreen;
+
+      margin-bottom:20px;
+    }
+
+    label{
+
+      font-weight:bold;
+    }
+
+    input{
+
+      width:100%;
+
+      padding:12px;
+
+      margin-top:5px;
+      margin-bottom:15px;
+
+      border:1px solid gray;
+
+      border-radius:5px;
+    }
+
+    button{
+
+      width:100%;
+
+      padding:12px;
+
+      border:none;
+
+      background:darkgreen;
+
+      color:white;
+
+      font-size:16px;
+
+      font-weight:bold;
+
+      border-radius:5px;
+
+      cursor:pointer;
+
+      transition:0.3s;
+    }
+
+    button:hover{
+
+      background:green;
+
+    }
+
+    p{
+
+      margin-top:15px;
+
+      text-align:center;
+    }
+
+    a{
+
+      color:darkgreen;
+
+      text-decoration:none;
+
+      font-weight:bold;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- REGISTER BOX -->
+
+  <div class="register-box">
+
+    <h1>Register</h1>
+
+    <!-- NAMA -->
+    <label>Nama Lengkap</label>
+
+    <input type="text" id="nama" placeholder="Masukkan nama lengkap">
+
+    <!-- EMAIL -->
+    <label>Email</label>
+
+    <input type="email" id="email" placeholder="Masukkan email">
+
+    <!-- USERNAME -->
+    <label>Username</label>
+
+    <input type="text" id="username" placeholder="Masukkan username">
+
+    <!-- PASSWORD -->
+    <label>Password</label>
+
+    <input type="password" id="password" placeholder="Masukkan password">
+
+    <!-- KONFIRMASI -->
+    <label>Konfirmasi Password</label>
+
+    <input type="password" id="konfirmasi" placeholder="Ulangi password">
+
+    <!-- BUTTON -->
+    <button onclick="register()">
+
+      Daftar Sekarang
+
+    </button>
+
+    <p>
+
+      Sudah punya akun?
+      <a href="login.html">Login</a>
+
+    </p>
+
+  </div>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    function register(){
+
+      let nama = document.getElementById("nama").value;
+
+      let email = document.getElementById("email").value;
+
+      let username = document.getElementById("username").value;
+
+      let password = document.getElementById("password").value;
+
+      let konfirmasi = document.getElementById("konfirmasi").value;
+
+      if(
+        nama == "" ||
+        email == "" ||
+        username == "" ||
+        password == "" ||
+        konfirmasi == ""
+      ){
+
+        alert("Semua data wajib diisi!");
+
+      }
+
+      else if(password != konfirmasi){
+
+        alert("Password tidak sama!");
+
+      }
+
+      else{
+
+        alert("Register berhasil!");
+
+        window.location.href = "login.html";
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
